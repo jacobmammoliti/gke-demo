@@ -139,11 +139,11 @@ module "hub" {
       config_sync = {
         git = {
           policy_dir    = "configsync"
-          source_format = "hierarchy"
+          source_format = "unstructured"
           sync_branch   = "main"
           sync_repo     = "https://github.com/jacobmammoliti/gke-demo"
         }
-        source_format = "hierarchy"
+        source_format = "unstructured"
       }
       policy_controller = {
         audit_interval_seconds     = 120
