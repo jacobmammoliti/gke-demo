@@ -102,7 +102,7 @@ module "gke_nodepools_standard" {
 }
 
 module "hub" {
-  source     = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/gke-hub?ref=master"
+  source     = "github.com/GoogleCloudPlatform/cloud-foundation-fabric.git//modules/gke-hub?ref=v34.0.0"
   project_id = module.project.project_id
 
   clusters = {
@@ -129,7 +129,7 @@ module "hub" {
           policy_dir    = "configsync"
           source_format = "hierarchy"
           sync_branch   = "main"
-          sync_repo     = "https://github.com/danielmarzini/configsync-platform-example"
+          sync_repo     = "https://github.com/jacobmammoliti/gke-demo"
         }
         source_format = "hierarchy"
       }
