@@ -99,6 +99,18 @@ module "gke_nodepools_standard" {
     ephemeral_ssd_count = 1
     spot                = true
   }
+
+  node_count = {
+    initial = 1
+  }
+
+  nodepool_config = {
+    autoscaling = {
+      max_node_count  = 3
+      location_policy = "ANY"
+      min_node_count  = 1
+    }
+  }
 }
 
 module "hub" {
@@ -114,7 +126,7 @@ module "hub" {
     configmanagement             = true
     identityservice              = false
     multiclusteringress          = null
-    servicemesh                  = true
+    servicemesh                  = false
     multiclusterservicediscovery = false
   }
 
