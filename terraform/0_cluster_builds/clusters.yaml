@@ -1,0 +1,5 @@
+- region: northamerica-northeast2 # Toronto
+  type: standard
+
+- region: us-west4 # Las Vegas
+  type: standard
